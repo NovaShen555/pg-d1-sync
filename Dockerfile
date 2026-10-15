@@ -9,6 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt \
     && groupadd --system sync \
     && useradd --system --gid sync --home-dir /app --no-create-home sync
 COPY app /app/app
-USER sync
+USER pgd1sync
 
 ENTRYPOINT ["python", "-m", "app.main"]
+
