@@ -1,0 +1,10 @@
+services:
+  sync:
+    build: .
+    image: pg-d1-sync:local
+    env_file: .env
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 2m
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
